@@ -31,7 +31,7 @@ docker build -t SEU_USUARIO_DOCKERHUB/nginx-l4:latest .
 docker push SEU_USUARIO_DOCKERHUB/nginx-l4:latest
 ```
 
-3. Edite o arquivo `docker-compose.yml` e substitua `<SEU_USUARIO_DOCKERHUB>` pelo seu nome de usuário.
+3. Edite o arquivo `docker-compose.yml` e substitua `<SERGIO_DOCKERHUB>` pelo seu nome de usuário.
 
 > A imagem usa Nginx com **proxy TCP (Camada 4)** ouvindo na porta **8080** e encaminhando para `webserver:80`.
 > Também inclui `ping` e `curl` instalados.
