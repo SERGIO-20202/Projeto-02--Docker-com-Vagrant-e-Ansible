@@ -1,6 +1,6 @@
 services:
   webproxy:
-    image: <sergio_DOCKERHUB>/nginx-l4:latest
+    image: <SERGIO_DOCKERHUB>/nginx-l4:latest
     container_name: webproxy
     depends_on:
       - webserver
