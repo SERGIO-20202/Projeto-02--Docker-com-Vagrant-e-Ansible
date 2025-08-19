@@ -49,13 +49,3 @@ vagrant up
 ```
 
 4. Ao final, acesse: **http://192.168.56.145:8080**
-
-## Notas
-
-- O `Vagrantfile` usa `ansible_local`, então não precisa ter Ansible instalado na máquina host.
-- A rede privada/VBox usa `192.168.56.145` como IP fixo. Caso a rede 192.168.56.0/24 conflite, ajuste conforme necessário.
-- Apenas o container `webproxy` é exposto para fora da rede do Docker (porta 8080), conforme o enunciado.
-- O trecho final do PDF menciona `192.168.57.1XY:8080`; aqui padronizamos em `192.168.56.1XY` = `192.168.56.145:8080`, em alinhamento com a especificação inicial.
-```
-# Projeto-02--Docker-com-Vagrant-e-Ansible
-# Projeto-02--Docker-com-Vagrant-e-Ansible
