@@ -3,7 +3,7 @@
 Este repositório contém os **três entregáveis** solicitados e os artefatos auxiliares para a imagem personalizada do Nginx.
 
 - IP definido: **192.168.56.145** (com XY = 45)
-- Hostname: **Sergio.Henrique**
+- Hostname: **sergio.henrique**
 - Acesso final: **http://192.168.56.145:8080**
 
 ## Estrutura
