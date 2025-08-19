@@ -1,0 +1,48 @@
+services:
+  webproxy:
+    image: <sergio_DOCKERHUB>/nginx-l4:latest
+    container_name: webproxy
+    depends_on:
+      - webserver
+    ports:
+      - "8080:8080"   # expor apenas o proxy
+    networks:
+      - wordpress
+    restart: unless-stopped
+
+  webserver:
+    image: wordpress:latest
+    container_name: webserver
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: wp_pass
+      WORDPRESS_DB_NAME: wp_db
+    volumes:
+      - app:/var/www/html
+    networks:
+      - wordpress
+    restart: unless-stopped
+
+  database:
+    image: mysql:8.0
+    container_name: database
+    environment:
+      MYSQL_DATABASE: wp_db
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - wordpress
+    restart: unless-stopped
+
+volumes:
+  app:
+  db:
+
+networks:
+  wordpress:
+    name: wordpress
