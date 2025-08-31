@@ -36,19 +36,7 @@ docker push SERGIO_DOCKERHUB/nginx-l4:latest
 > A imagem usa Nginx com **proxy TCP (Camada 4)** ouvindo na porta **8080** e encaminhando para `webserver:80`.
 > Também inclui `ping` e `curl` instalados.
 
-## Como executar
-
-> Pré-requisitos: VirtualBox e Vagrant instalados na máquina host.
-
-1. Ajuste, se necessário, o **hostname** no `Vagrantfile` para corresponder aos primeiros nomes da dupla.
-2. (Opcional) Ajuste as senhas do MySQL no `docker-compose.yml`.
-3. Suba a VM e deixe o Ansible fazer todo o provisionamento:
-
-```bash
 vagrant up
 ```
 
 4. Ao final, acesse: **http://192.168.56.145:8080**
-
-
-# Projeto-02--Docker-com-Vagrant-e-Ansible
